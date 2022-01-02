@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(255, 255, 255);
+    font-family: "Poppins", sans-serif;
+}
+.navigation{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    width: 70px;
+    border-radius: 10px;
+    border-left: solid 5px #4d5bf9;
+    background: #4d5bf9;
+    box-sizing: initial;
+    transition: .5s width;
+    overflow-x: hidden;
+}
+.navigation.active{
+    width: calc(100% - 100px);
+    overflow: hidden;
+}
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 40px;
+}
+.navigation ul li{
+    position: relative;
+    list-style: none;
+    width: 100%;
+}
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+    pointer-events: none;
+}
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    width: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+.navigation ul li a .icon i{
+    font-size: 1.5em;
+    transform: scale(0.90, 0.90);
+    transition: .3s transform ease-in-out;
+}
+.navigation ul li  a .title{
+    position: relative;
+    display: block;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+}
+.navigation ul .list.active{
+    background: #fff;
+    border-radius: 20px 0 0 20px;
+}
+.navigation ul .list.active a{
+    color: #4d5bf9;
+}
+.navigation ul .list.active .icon i{
+    transform: scale(1.1);
+}
+.navigation ul .list.active b:nth-child(1){
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    top: -20px;
+    background: #fff;
+}
+.navigation ul .list.active b:nth-child(1)::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-bottom-right-radius: 20px;
+    background: #4d5bf9;
+}
+.navigation ul .list.active b:nth-child(2){
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    bottom: -20px;
+    background: #fff;
+}
+.navigation ul .list.active b:nth-child(2)::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-top-right-radius: 20px;
+    background: #4d5bf9;
+}
+.toggle{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    right: 10px;
+    background: #4d5bf9;
+    border-radius: 4px;
+    top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.toggle span{
+    position: absolute;
+    background: #fff;
+    width: 40px;
+    height: 3px;
+    border-radius: 10px;
+    transition: .3s all ease-in-out;
+}
+.toggle span:nth-child(1){
+    transform: translateY(-15px);
+    width: 10px;
+    left: 5px;
+}
+.toggle span:nth-child(3){
+    transform: translateY(15px);
+    width: 20px;
+    left: 5px;
+}
+.toggle.active span:nth-child(2){
+    transform: translateX(100px);
+}
+.toggle.active span:nth-child(1){
+    transform: translateY(0) rotate(45deg);
+    width: 40px;
+}
+.toggle.active span:nth-child(3){
+    transform: translateY(0) rotate(135deg);
+    width: 40px;
+}
